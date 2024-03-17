@@ -1,8 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
-from pets.models import Owner
-from pets.api.serializers import OwnerSerializer
+from pets.models import Pets
+from pets.api.serializers import PetsSerializer
 
-
-class OwnerApiViewSet(ModelViewSet):
-    serializer_class=OwnerSerializer
-    queryset=Owner.objects.all()
+class PetsApiViewSet(ModelViewSet):
+    serializer_class=PetsSerializer
+    queryset=Pets.objects.all()

@@ -21,6 +21,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 #Importar rutas de las otras aplicaciones
+from pets_Owner.api.router import router_pets_owner
 from pets.api.router import router_pets
 
 #Configuracion 
@@ -43,5 +44,6 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     #Rutas de la aplicacion 
+    path('api/',include(router_pets_owner.urls)),
     path('api/',include(router_pets.urls)),
 ]
